@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assessment - BINUSMAYA</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="top-header">
+      <div class="header-left-top">
+        <img
+          src="assets/logo-binusmaya-header.svg"
+          alt="BINUSMAYA Logo"
+          class="app-logo"
+        />
+        <span class="app-name">LEARNING MANAGEMENT SYSTEM</span>
+      </div>
+      <div class="header-right-top">
+        <button class="notification-btn" title="Notification">🔔</button>
+        <div class="user-profile">
+          <img src="assets/profile.jpg" alt="User Avatar" class="user-avatar" />
+          <span class="username">User Name</span>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="mobile-overlay" id="mobileOverlay"></div>
+
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="role-section">
+            <span class="role-label">Role</span>
+            <button class="change-btn">CHANGE</button>
+          </div>
+
+          <div class="user-info">
+            <ul class="user-details">
+              <li class="active-user">Student</li>
+              <li>Undergraduate</li>
+              <li>BINUS University</li>
+            </ul>
+          </div>
+
+          <nav class="navigation">
+            <ul class="nav-list">
+              <li>
+                <a href="dashboard.html" class="nav-link active"
+                  >📊 Dashboard</a
+                >
+              </li>
+              <li><a href="#" class="nav-link">📚 Courses</a></li>
+              <li><a href="#" class="nav-link">💬 Forum</a></li>
+              <li>
+                <a href="assessment.html" class="nav-link">📋 Assessment</a>
+              </li>
+              <li><a href="#" class="nav-link">📈 Gradebook</a></li>
+              <li><a href="#" class="nav-link">⏰ Attendance</a></li>
+              <li><a href="schedule.html" class="nav-link">📅 Schedule</a></li>
+              <li><a href="#" class="nav-link">📢 Announcement</a></li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+      <section class="dashboard">
+        <img src="assets/dashboard.png" alt="imgdashboard" />
+      </section>
+    </div>
+    <script src="assignments-data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

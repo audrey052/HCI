@@ -1,0 +1,425 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 50%, #2e6da4 100%);
+  min-height: 100vh;
+  color: white;
+  overflow-x: hidden;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-placeholder {
+  font-weight: 600;
+  color: #2e6da4;
+  font-size: 18px;
+}
+.logo-image {
+  height: 50px;
+  object-fit: contain;
+}
+
+.support-link a {
+  color: #2e6da4;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.support-link a:hover {
+  background-color: rgba(46, 109, 164, 0.1);
+}
+
+/* Main Content */
+.main-content {
+  padding-top: 100px;
+  min-height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  width: 100%;
+}
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.welcome-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.welcome-subtitle {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin-bottom: 48px;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.login_img {
+  max-height: 500px;
+}
+
+.microsoft-btn {
+  background: white;
+  color: #333;
+  border: none;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.microsoft-btn:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.microsoft-logo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  width: 20px;
+  height: 20px;
+}
+
+.ms-square {
+  width: 9px;
+  height: 9px;
+}
+
+.ms-square.red {
+  background: #f25022;
+}
+.ms-square.green {
+  background: #7fba00;
+}
+.ms-square.blue {
+  background: #00a4ef;
+}
+.ms-square.yellow {
+  background: #ffb900;
+}
+
+.username-btn {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.username-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+  transform: translateY(-2px);
+}
+
+.right-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.illustration-container {
+  width: 100%;
+  max-width: 500px;
+  height: 400px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.illustration-placeholder {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.student-figures {
+  display: flex;
+  gap: 32px;
+  z-index: 2;
+}
+
+.student {
+  font-size: 4rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.student-2 {
+  animation-delay: -1.5s;
+}
+
+.educational-items {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.item {
+  position: absolute;
+  font-size: 2rem;
+  animation: orbit 8s linear infinite;
+}
+
+.rocket {
+  top: 10%;
+  right: 20%;
+  animation-delay: 0s;
+}
+
+.book {
+  bottom: 20%;
+  left: 15%;
+  animation-delay: -2s;
+}
+
+.laptop {
+  top: 30%;
+  left: 10%;
+  animation-delay: -4s;
+}
+
+.camera {
+  bottom: 10%;
+  right: 15%;
+  animation-delay: -6s;
+}
+
+/* Footer */
+.footer {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 24px 0;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.footer-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.footer-subtitle {
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(120px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(120px) rotate(-360deg);
+  }
+}
+
+@media (max-width: 1024px) {
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+
+  .welcome-title {
+    font-size: 2.5rem;
+  }
+
+  .illustration-container {
+    max-width: 400px;
+    height: 300px;
+  }
+
+  .student {
+    font-size: 3rem;
+  }
+
+  .item {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    padding: 0 16px;
+  }
+
+  .logo-container {
+    gap: 8px;
+  }
+
+  .logo-placeholder {
+    font-size: 14px;
+  }
+
+  .content-wrapper {
+    padding: 0 16px;
+    gap: 32px;
+  }
+
+  .welcome-title {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+
+  .welcome-subtitle {
+    font-size: 1rem;
+    margin-bottom: 32px;
+  }
+
+  .button-group {
+    max-width: 100%;
+  }
+
+  .microsoft-btn,
+  .username-btn {
+    padding: 14px 20px;
+    font-size: 14px;
+  }
+
+  .illustration-container {
+    height: 250px;
+  }
+
+  .student {
+    font-size: 2.5rem;
+  }
+
+  .item {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding-top: 80px;
+  }
+
+  .welcome-title {
+    font-size: 1.75rem;
+  }
+
+  .button-group {
+    gap: 12px;
+  }
+
+  .microsoft-btn,
+  .username-btn {
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+
+  .illustration-container {
+    height: 200px;
+  }
+
+  .student {
+    font-size: 2rem;
+  }
+
+  .student-figures {
+    gap: 16px;
+  }
+}
+
+.microsoft-btn:active,
+.username-btn:active {
+  transform: translateY(0);
+}
+
+.microsoft-btn:focus,
+.username-btn:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}

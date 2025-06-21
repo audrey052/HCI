@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assessment Details - BINUSMAYA</title>
+    <link rel="stylesheet" href="assessment.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="top-header">
+      <div class="header-left-top">
+        <img
+          src="assets/logo-binusmaya-header.svg"
+          alt="BINUSMAYA Logo"
+          class="app-logo"
+        />
+        <span class="app-name">LEARNING MANAGEMENT SYSTEM</span>
+      </div>
+      <div class="header-right-top">
+        <button class="notification-btn" title="Notification">🔔</button>
+        <div class="user-profile">
+          <img src="assets/profile.jpg" alt="User Avatar" class="user-avatar" />
+          <span class="username">User Name</span>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="role-section">
+            <span class="role-label">Role</span>
+            <button class="change-btn">CHANGE</button>
+          </div>
+
+          <div class="user-info">
+            <ul class="user-details">
+              <li class="active-user">Student</li>
+              <li>Undergraduate</li>
+              <li>BINUS University</li>
+            </ul>
+          </div>
+
+          <nav class="navigation">
+            <ul class="nav-list">
+              <li>
+                <a href="dashboard.html" class="nav-link">📊 Dashboard</a>
+              </li>
+              <li><a href="#" class="nav-link">📚 Courses</a></li>
+              <li><a href="#" class="nav-link">💬 Forum</a></li>
+              <li>
+                <a href="assessment.html" class="nav-link active"
+                  >📋 Assessment</a
+                >
+              </li>
+              <li><a href="#" sanded class="nav-link">📈 Gradebook</a></li>
+              <li><a href="#" class="nav-link">⏰ Attendance</a></li>
+              <li><a href="schedule.html" class="nav-link">📅 Schedule</a></li>
+              <li><a href="#" class="nav-link">📢 Announcement</a></li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="header details-header">
+          <div class="header-left">
+            <a href="index.html" class="back-arrow-container" id="backArrowBtn"
+              >←</a
+            >
+          </div>
+        </header>
+
+        <div class="content-area details-content-area">
+          <div class="details-right-section" style="flex-grow: 1">
+            <div class="assessment-details-card">
+              <h2 class="assessment-title-details">TA05 Submission</h2>
+              <p class="assessment-course-details">
+                Human and Computer Interaction
+              </p>
+              <p class="assessment-type-details">Individual</p>
+
+              <div class="assessment-info-grid">
+                <div class="info-item">
+                  <span class="info-label">Start</span>
+                  <span class="info-value">04 May 2025, 09:00</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">Total Attempts</span>
+                  <span class="info-value" id="totalAttempts"
+                    >0 of 3 Attempts</span
+                  >
+                </div>
+                <div class="info-item">
+                  <span class="info-label">Scoring Method</span>
+                  <span class="info-value">Latest Score</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">End</span>
+                  <span class="info-value">26 May 2025, 23:59</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">Points</span>
+                  <span class="info-value">100 Points</span>
+                </div>
+              </div>
+
+              <div class="description-box">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                  non risus tempus, fermentum urna pretium, rhoncus nulla. Nam a
+                  consequat neque. Fusce ut facilisis diam. Nunc ligula orci,
+                  hendrerit ac pellentesque vitae, finibus ut lacus. Cras
+                  vestibulum augue mauris, id tincidunt nulla elementum eget.
+                  Maecenas ac lorem non urna vulputate condimentum sed at sem.
+                  Donec pretium viverra ex, vel porttitor dolor interdum
+                  ullamcorper.
+                </p>
+
+                <a
+                  href="assets/description.pdf"
+                  target="_blank"
+                  class="attachment-card-btn"
+                >
+                  <div class="attachment-thumbnail">
+                    <img
+                      src="assets/pdf.jpeg"
+                      alt="PDF Thumbnail"
+                      class="thumbnail-img"
+                    />
+                  </div>
+                  <div class="attachment-info">
+                    <span class="attachment-name"
+                      >Kelompok 3 - LA09 - ADA S...</span
+                    >
+                    <span class="attachment-type">PDF</span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="your-work-section hidden" id="yourWorkSection">
+                <div class="your-work-header">
+                  <h3 class="your-work-title">Your work</h3>
+                  <span class="turn-in-status" id="turnInStatus"></span>
+                </div>
+                <span class="last-attempt-number" id="lastAttemptNumber"></span>
+                <a
+                  href="#"
+                  target="_blank"
+                  class="uploaded-file-card"
+                  id="uploadedFileLink"
+                >
+                  <div class="uploaded-file-thumbnail">
+                    <img
+                      src="assets/pdf.jpeg"
+                      alt="Uploaded File Thumbnail"
+                      class="thumbnail-img"
+                      id="uploadedFileThumbnail"
+                    />
+                  </div>
+                  <div class="uploaded-file-info">
+                    <span
+                      class="uploaded-file-name"
+                      id="uploadedFileName"
+                    ></span>
+                    <span
+                      class="uploaded-file-type"
+                      id="uploadedFileType"
+                    ></span>
+                  </div>
+                </a>
+                <button class="submit-work-btn" id="resubmitWorkBtn">
+                  Submit Attempt 1
+                </button>
+              </div>
+
+              <button class="submit-work-btn" id="uploadWorkBtn">
+                Upload Your Work
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div class="modal-overlay hidden" id="uploadModalOverlay">
+      <div class="modal-content">
+        <button class="modal-close-btn" id="closeUploadModal">&times;</button>
+        <h3 class="modal-title">Upload Your Work</h3>
+        <div class="modal-body">
+          <div class="restrictions-text">
+            <p><strong>File Restrictions:</strong></p>
+            <p>Max file size: 5MB</p>
+            <p>Allowed formats: .pdf, .doc, .docx, .zip</p>
+          </div>
+          <div class="file-input-container">
+            <label for="fileUploadInput" class="custom-file-upload">
+              Choose File
+            </label>
+            <input
+              type="file"
+              id="fileUploadInput"
+              accept=".pdf,.doc,.docx,.zip"
+              class="hidden-file-input"
+            />
+            <span id="selectedFileName" class="selected-file-name"
+              >No file chosen</span
+            >
+          </div>
+          <p id="fileError" class="file-error hidden">
+            Please select a valid file.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button class="submit-attempt-btn" id="modalSubmitAttemptBtn">
+            Submit Attempt 1
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- for upload -->
+    <div class="modal-overlay hidden" id="confirmationModalOverlay">
+      <div class="modal-content small-modal">
+        <h3 class="modal-title">Confirm Upload</h3>
+        <p class="confirmation-text">
+          Are you sure you want to upload this file?
+        </p>
+
+        <div class="review-section">
+          <p class="filename-to-confirm" id="filenameToConfirm"></p>
+          <button class="download-to-review-btn" id="downloadToReviewBtn">
+            Download to Review
+          </button>
+        </div>
+
+        <div class="confirmation-actions">
+          <div class="confirmation-buttons">
+            <button class="confirmation-btn confirm-yes" id="confirmUploadYes">
+              Yes, Upload
+            </button>
+            <button class="confirmation-btn confirm-no" id="confirmUploadNo">
+              No, Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Success Notification -->
+    <div class="modal-overlay hidden" id="successNotification">
+      <div class="modal-content small-modal success-modal">
+        <div class="success-icon">✓</div>
+        <h3 class="modal-title success-title">Submission Successful!</h3>
+        <p class="success-message">
+          Your work has been submitted successfully. Your lecturer will be
+          grading it soon.
+        </p>
+      </div>
+    </div>
+
+    <script src="assessment.js"></script>
+  </body>
+</html>

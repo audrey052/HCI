@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assessment - BINUSMAYA</title>
+    <link rel="stylesheet" href="assessment.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="top-header">
+      <div class="header-left-top">
+        <img
+          src="assets/logo-binusmaya-header.svg"
+          alt="BINUSMAYA Logo"
+          class="app-logo"
+        />
+        <span class="app-name">LEARNING MANAGEMENT SYSTEM</span>
+      </div>
+      <div class="header-right-top">
+        <div class="notification-container">
+          <button
+            class="notification-btn"
+            id="notificationBtn"
+            title="Notification"
+          >
+            🔔
+          </button>
+          <div class="notification-dropdown" id="notificationDropdown">
+            <div class="notification-header">Notifications</div>
+            <div class="notification-list" id="notificationList">
+              <div class="notification-empty">No new notifications.</div>
+            </div>
+          </div>
+        </div>
+        <div class="user-profile">
+          <img src="assets/profile.jpg" alt="User Avatar" class="user-avatar" />
+          <span class="username">User Name</span>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="mobile-overlay" id="mobileOverlay"></div>
+
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="role-section">
+            <span class="role-label">Role</span>
+            <button class="change-btn">CHANGE</button>
+          </div>
+
+          <div class="user-info">
+            <ul class="user-details">
+              <li class="active-user">Student</li>
+              <li>Undergraduate</li>
+              <li>BINUS University</li>
+            </ul>
+          </div>
+
+          <nav class="navigation">
+            <ul class="nav-list">
+              <li>
+                <a href="dashboard.html" class="nav-link">📊 Dashboard</a>
+              </li>
+              <li><a href="#" class="nav-link">📚 Courses</a></li>
+              <li><a href="#" class="nav-link">💬 Forum</a></li>
+              <li>
+                <a href="assessment.html" class="nav-link active"
+                  >📋 Assessment</a
+                >
+              </li>
+              <li><a href="#" class="nav-link">📈 Gradebook</a></li>
+              <li><a href="#" class="nav-link">⏰ Attendance</a></li>
+              <li><a href="schedule.html" class="nav-link">📅 Schedule</a></li>
+              <li><a href="#" class="nav-link">📢 Announcement</a></li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="header">
+          <div class="header-left">
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+              <div class="hamburger-line"></div>
+              <div class="hamburger-line"></div>
+              <div class="hamburger-line"></div>
+            </button>
+            <h1 class="page-title">Assessment</h1>
+            <div class="course-filter desktop-filter">
+              <select class="filter-select" id="courseFilter">
+                <option value="all">All Course</option>
+                <option value="hci">Human Computer Interaction</option>
+                <option value="algorithm">Algorithm and Analysis Design</option>
+                <option value="database">Database Systems</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="header-right">
+            <div class="status-badges desktop-status">
+              <button
+                class="status-item status-filter-btn active"
+                data-status-filter="assigned"
+              >
+                <span>Assigned</span>
+                <span class="badge badge-orange">3</span>
+              </button>
+              <button
+                class="status-item status-filter-btn"
+                data-status-filter="missing"
+              >
+                <span>Missing</span>
+                <span class="badge badge-red">0</span>
+              </button>
+              <button
+                class="status-item status-filter-btn"
+                data-status-filter="done"
+              >
+                <span>Done</span>
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <div class="mobile-filters">
+          <div class="mobile-course-filter">
+            <select class="filter-select" id="mobileFilter">
+              <option value="all">All Course</option>
+              <option value="hci">Human Computer Interaction</option>
+              <option value="algorithm">Algorithm and Analysis Design</option>
+              <option value="database">Database Systems</option>
+            </select>
+          </div>
+          <div class="mobile-status-badges">
+            <button
+              class="status-item status-filter-btn active"
+              data-status-filter="assigned"
+            >
+              <span>Assigned</span>
+              <span class="badge badge-orange">3</span>
+            </button>
+            <button
+              class="status-item status-filter-btn"
+              data-status-filter="missing"
+            >
+              <span>Missing</span>
+              <span class="badge badge-red">0</span>
+            </button>
+            <button
+              class="status-item status-filter-btn"
+              data-status-filter="done"
+            >
+              <span>Done</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="content-area">
+          <div class="overall-empty-state hidden" id="overallEmptyState">
+            <p class="empty-text">No assignments found for this filter.</p>
+          </div>
+
+          <!-- Section for Assigned status - retains weekly sorting -->
+          <div id="assignedSections">
+            <section class="assignments-section" id="thisWeekSection">
+              <h2 class="section-title">
+                This Week
+                <span class="toggle-arrow" data-target="thisWeekContent"
+                  >▲</span
+                >
+              </h2>
+              <div class="section-content" id="thisWeekContent">
+                <div class="assignments-grid">
+                  <div
+                    class="assignment-card urgent"
+                    data-course="hci"
+                    data-status="assigned"
+                    id="hci_ta05"
+                    data-assignment-id="hci_ta05"
+                  >
+                    <div class="card-content">
+                      <h3 class="course-name">
+                        Human and Computer Interaction - LA09
+                      </h3>
+                      <p class="assignment-title">TA05 Submission</p>
+                      <div class="card-footer">
+                        <span class="due-date urgent-date">Due today</span>
+                        <button
+                          class="details-btn"
+                          onclick="location.href='assessment_details.html?assignmentId=hci_ta05'"
+                        >
+                          More details
+                        </button>
+                      </div>
+                      <p class="submission-status">
+                        You haven't submitted this assessment
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="assignment-card"
+                    data-course="algorithm"
+                    data-status="assigned"
+                    id="algorithm_iccp"
+                    data-assignment-id="algorithm_iccp"
+                  >
+                    <div class="card-content">
+                      <h3 class="course-name">
+                        Algorithm and Analysis Design - LA09
+                      </h3>
+                      <p class="assignment-title">ICCP Simulation</p>
+                      <div class="card-footer">
+                        <span class="due-date">Due 28 May 2025</span>
+                        <button
+                          class="details-btn"
+                          onclick="location.href='assessment_details.html?assignmentId=algorithm_iccp'"
+                        >
+                          More details
+                        </button>
+                      </div>
+                      <p class="submission-status">
+                        You haven't submitted this assessment
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="assignment-card"
+                    data-course="hci"
+                    data-status="assigned"
+                    id="hci_project_proposal"
+                    data-assignment-id="hci_project_proposal"
+                  >
+                    <div class="card-content">
+                      <h3 class="course-name">
+                        Human and Computer Interaction - LC01
+                      </h3>
+                      <p class="assignment-title">Project Proposal Final</p>
+                      <div class="card-footer">
+                        <span class="due-date">Due 10 May 2025</span>
+                        <button
+                          class="details-btn"
+                          onclick="location.href='assessment_details.html?assignmentId=hci_project_proposal'"
+                        >
+                          More details
+                        </button>
+                      </div>
+                      <p class="submission-status">
+                        You haven't submitted this assessment
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Missing cards are now placed here in their original sections -->
+                  <div
+                    class="assignment-card urgent"
+                    data-course="algorithm"
+                    data-status="missing"
+                    id="algorithm_quiz1"
+                    data-assignment-id="algorithm_quiz1"
+                  >
+                    <div class="card-content">
+                      <h3 class="course-name">
+                        Algorithm and Analysis Design - LA01
+                      </h3>
+                      <p class="assignment-title">Quiz 1</p>
+                      <div class="card-footer">
+                        <span class="due-date urgent-date"
+                          >Overdue by 5 days</span
+                        >
+                        <button
+                          class="details-btn"
+                          onclick="location.href='assessment_details.html?assignmentId=algorithm_quiz1'"
+                        >
+                          More details
+                        </button>
+                      </div>
+                      <p class="submission-status">
+                        You didn't submitted this assessment
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="assignment-card urgent"
+                    data-course="hci"
+                    data-status="missing"
+                    id="hci_lab_report"
+                    data-assignment-id="hci_lab_report"
+                  >
+                    <div class="card-content">
+                      <h3 class="course-name">
+                        Human and Computer Interaction - LB02
+                      </h3>
+                      <p class="assignment-title">Lab Report 3</p>
+                      <div class="card-footer">
+                        <span class="due-date urgent-date"
+                          >Overdue by 2 days</span
+                        >
+                        <button
+                          class="details-btn"
+                          onclick="location.href='assessment_details.html?assignmentId=hci_lab_report'"
+                        >
+                          More details
+                        </button>
+                      </div>
+                      <p class="submission-status">
+                        You didn't submitted this assessment
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="assignment-card urgent"
+                    data-course="database"
+                    data-status="missing"
+                    id="db_midterm"
+                    data-assignment-id="db_midterm"
+                  >
+                    <div class="card-content">
+                      <h3 class="course-name">Database Systems - CC01</h3>
+                      <p class="assignment-title">Midterm Exam</p>
+                      <div class="card-footer">
+                        <span class="due-date urgent-date"
+                          >Overdue by 1 day</span
+                        >
+                        <button
+                          class="details-btn"
+                          onclick="location.href='assessment_details.html?assignmentId=db_midterm'"
+                        >
+                          More details
+                        </button>
+                      </div>
+                      <p class="submission-status">
+                        You didn't submitted this assessment
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="assignments-section" id="nextWeekSection">
+              <h2 class="section-title">
+                Next Week
+                <span class="toggle-arrow" data-target="nextWeekContent"
+                  >▼</span
+                >
+              </h2>
+              <div class="section-content hidden" id="nextWeekContent">
+                <div class="empty-state">
+                  <div class="empty-card">
+                    <p class="empty-text">No assignments due next week</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="assignments-section" id="laterSection">
+              <h2 class="section-title">
+                Later
+                <span class="toggle-arrow" data-target="laterContent">▼</span>
+              </h2>
+              <div class="section-content hidden" id="laterContent">
+                <div class="empty-state">
+                  <div class="empty-card">
+                    <p class="empty-text">No assignments due later</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- New Section for Missing and Done status - no weekly sorting -->
+          <section class="assignments-section hidden" id="singleListSection">
+            <h2 class="section-title" id="singleListSectionTitle">
+              All Missing Assignments
+            </h2>
+            <div class="section-content" id="singleListContent">
+              <div class="assignments-grid" id="singleListGrid">
+                <!-- Assignments will be dynamically moved/cloned here by JavaScript -->
+              </div>
+              <div class="empty-state hidden" id="singleListEmptyState">
+                <div class="empty-card">
+                  <p class="empty-text" id="singleListEmptyText">
+                    No assignments found for this status.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        ...
+      </main>
+    </div>
+    <script src="assignments-data.js"></script>
+    <script src="script.js"></script>
+    <script src="assessment.js"></script>
+  </body>
+</html>

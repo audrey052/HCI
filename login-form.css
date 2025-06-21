@@ -1,0 +1,188 @@
+* {
+  font-family: "open sans", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f2f2f2;
+}
+
+.login-container {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 380px;
+  text-align: center;
+}
+
+.microsoft-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.microsoft-logo img {
+  width: 100px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.microsoft-logo span {
+  font-size: 16px;
+  color: #5e5e5e;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 25px;
+  color: #333;
+  text-align: left;
+}
+
+.input-group {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: calc(100% - 22px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: #0067b8;
+  box-shadow: 0 0 0 1px #0067b8;
+}
+
+.input-group .forgot-password-link {
+  display: block;
+  margin-top: 15px;
+  color: #0067b8;
+  text-decoration: none;
+  font-size: 14px;
+  text-align: left;
+}
+
+.input-group .forgot-password-link:hover {
+  text-decoration: underline;
+}
+
+.forgot-password {
+  text-align: left;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.forgot-password a {
+  color: #0067b8;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+#passwordScreen .input-group {
+  margin-bottom: 30px;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0067b8;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #005a9e;
+}
+
+.error {
+  color: #e80000;
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.sign-in-options {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.sign-in-options a {
+  color: #0067b8;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.sign-in-options a:hover {
+  text-decoration: underline;
+}
+
+.back-button {
+  background-color: #e6e6e6;
+  color: #333;
+  margin-right: 10px;
+}
+
+.back-button:hover {
+  background-color: #d4d4d4;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.button-group button {
+  width: auto;
+  padding: 10px 20px;
+}
+
+.microsoft-email-display {
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+.microsoft-email-display .arrow {
+  margin-right: 5px;
+  color: #0067b8;
+}
+
+.microsoft-email-display a {
+  color: #0067b8;
+  text-decoration: none;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.microsoft-email-display a:hover {
+  text-decoration: underline;
+}

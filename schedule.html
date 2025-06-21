@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule - BINUSMAYA</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="schedule.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="top-header">
+      <div class="header-left-top">
+        <img
+          src="assets/logo-binusmaya-header.svg"
+          alt="BINUSMAYA Logo"
+          class="app-logo"
+        />
+        <span class="app-name">LEARNING MANAGEMENT SYSTEM</span>
+      </div>
+      <div class="header-right-top">
+        <div class="notification-container">
+          <button
+            class="notification-btn"
+            id="notificationBtn"
+            title="Notification"
+          >
+            🔔
+          </button>
+          <div class="notification-dropdown" id="notificationDropdown">
+            <div class="notification-header">Notifications</div>
+            <div class="notification-list" id="notificationList"></div>
+          </div>
+        </div>
+        <div class="user-profile">
+          <img src="assets/profile.jpg" alt="User Avatar" class="user-avatar" />
+          <span class="username">User Name</span>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="mobile-overlay" id="mobileOverlay"></div>
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="role-section">
+            <span class="role-label">Role</span>
+            <button class="change-btn">CHANGE</button>
+          </div>
+          <div class="user-info">
+            <ul class="user-details">
+              <li class="active-user">Student</li>
+              <li>Undergraduate</li>
+              <li>BINUS University</li>
+            </ul>
+          </div>
+          <nav class="navigation">
+            <ul class="nav-list">
+              <li>
+                <a href="dashboard.html" class="nav-link">📊 Dashboard</a>
+              </li>
+              <li><a href="#" class="nav-link">📚 Courses</a></li>
+              <li><a href="#" class="nav-link">💬 Forum</a></li>
+              <li>
+                <a href="assessment.html" class="nav-link">📋 Assessment</a>
+              </li>
+              <li><a href="#" class="nav-link">📈 Gradebook</a></li>
+              <li><a href="#" class="nav-link">⏰ Attendance</a></li>
+              <li>
+                <a href="schedule.html" class="nav-link active">📅 Schedule</a>
+              </li>
+              <li><a href="#" class="nav-link">📢 Announcement</a></li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="header">
+          <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+          </button>
+          <h1 class="page-title">My Schedule</h1>
+        </header>
+
+        <div class="schedule-view-container">
+          <div class="daily-schedule-list" id="daily-schedule-list"></div>
+          <div class="mini-calendar-container">
+            <div class="mc-header">
+              <button id="mc-prev-month-btn">‹</button>
+              <h3 id="mc-month-year"></h3>
+              <button id="mc-next-month-btn">›</button>
+            </div>
+            <div class="mc-grid mc-days-of-week">
+              <div>S</div>
+              <div>M</div>
+              <div>T</div>
+              <div>W</div>
+              <div>T</div>
+              <div>F</div>
+              <div>S</div>
+            </div>
+            <div class="mc-grid mc-days-grid" id="mc-days-grid"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="assignments-data.js"></script>
+    <script src="script.js"></script>
+    <script src="schedule.js"></script>
+  </body>
+</html>
